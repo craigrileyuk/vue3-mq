@@ -1,8 +1,12 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue')) :
-  typeof define === 'function' && define.amd ? define(['vue'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['vue3-mq'] = factory(global.vue));
-}(this, (function (vue) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('json2mq'), require('vue')) :
+  typeof define === 'function' && define.amd ? define(['json2mq', 'vue'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['vue3-mq'] = factory(global.json2mq, global.vue));
+}(this, (function (json2mq, vue) { 'use strict';
+
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var json2mq__default = /*#__PURE__*/_interopDefaultLegacy(json2mq);
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -141,66 +145,6 @@
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
-  var camel2hyphen = function (str) {
-    return str
-            .replace(/[A-Z]/g, function (match) {
-              return '-' + match.toLowerCase();
-            })
-            .toLowerCase();
-  };
-
-  var camel2hyphen_1 = camel2hyphen;
-
-  var isDimension = function (feature) {
-    var re = /[height|width]$/;
-    return re.test(feature);
-  };
-
-  var obj2mq = function (obj) {
-    var mq = '';
-    var features = Object.keys(obj);
-    features.forEach(function (feature, index) {
-      var value = obj[feature];
-      feature = camel2hyphen_1(feature);
-      // Add px to dimension features
-      if (isDimension(feature) && typeof value === 'number') {
-        value = value + 'px';
-      }
-      if (value === true) {
-        mq += feature;
-      } else if (value === false) {
-        mq += 'not ' + feature;
-      } else {
-        mq += '(' + feature + ': ' + value + ')';
-      }
-      if (index < features.length-1) {
-        mq += ' and ';
-      }
-    });
-    return mq;
-  };
-
-  var json2mq = function (query) {
-    var mq = '';
-    if (typeof query === 'string') {
-      return query;
-    }
-    // Handling array of media queries
-    if (query instanceof Array) {
-      query.forEach(function (q, index) {
-        mq += obj2mq(q);
-        if (index < query.length-1) {
-          mq += ', ';
-        }
-      });
-      return mq;
-    }
-    // Handling single media query
-    return obj2mq(query);
-  };
-
-  var json2mq_1 = json2mq;
-
   var DEFAULT_BREAKPOINTS = {
     xs: 576,
     sm: 768,
@@ -288,7 +232,7 @@
       }, index < keys.length - 1 ? {
         maxWidth: breakpointValues[index + 1] - 1
       } : {});
-      var mediaQuery = json2mq_1(options);
+      var mediaQuery = json2mq__default['default'](options);
       return Object.assign(accumulator, _defineProperty({}, keys[index], mediaQuery));
     }, {});
     return mediaQueries;

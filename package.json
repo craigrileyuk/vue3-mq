@@ -17,6 +17,9 @@
     "url": "https://github.com/craigrileyuk/vue3-mq"
   },
   "license": "MIT",
+  "dependencies": {
+    "json2mq": "^0.2.0"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",
     "@vue/cli-plugin-unit-jest": "^4.5.8",
@@ -30,7 +33,6 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-vue": "^7.1.0",
     "gh-pages": "^3.1.0",
-    "json2mq": "^0.2.0",
     "match-media-mock": "^0.1.1",
     "prettier": "^2.1.2",
     "primeflex": "^2.0.0",
