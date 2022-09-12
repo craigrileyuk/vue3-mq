@@ -6,7 +6,7 @@
 		"dist/*"
 	],
 	"main": "./dist/vue3-mq.umd.js",
-	"module": "./dist/vue3-mq.es.js",
+	"module": "./dist/vue3-mq.js",
 	"browserslist": [
 		"> 1%",
 		"last 2 versions",
