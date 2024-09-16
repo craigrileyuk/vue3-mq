@@ -1,5 +1,5 @@
 import { updateBreakpoints } from "./composables";
-export { default as MqResponsive } from "./component";
+import MqResponsive from "./component";
 import {
 	setDefaultBreakpoint,
 	setDefaultMotion,
@@ -65,4 +65,5 @@ const install = (
 
 export default {
 	install,
+	MqResponsive,
 };
