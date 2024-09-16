@@ -3,6 +3,18 @@
  ****************************************** */
 import { reactive, readonly, ref } from "vue";
 
+/**
+ * @typedef {"landscape"|"portrait"} OrientationOptions
+ */
+
+/**
+ * @typedef {"dark"|"light"} ThemeOptions
+ */
+
+/**
+ * @typedef {"no-preference"|"reduce"} MotionOptions
+ */
+
 /* ******************************************
  * STATE
  ****************************************** */
@@ -36,32 +48,32 @@ export const setAvailableBreakpoints = (v) => {
 };
 
 /**
- * @constant
- * @type {Function} - Sets the breakpoint to use when plugin executes in a non-browser context
+ * Sets the breakpoint to use when plugin executes in a non-browser context
+ * @param {string} v Default breakpoint key
  */
 export const setDefaultBreakpoint = (v) => {
 	_defaultBreakpoint.value = v;
 };
 
 /**
- * @constant
- * @type {Function} - Sets the orientation to use when plugin executes in a non-browser context
+ * Sets the orientation to use when plugin executes in a non-browser context
+ * @param { OrientationOptions } v The default orientation
  */
 export const setDefaultOrientation = (v) => {
 	_defaultOrientation.value = v;
 };
 
 /**
- * @constant
- * @type {Function} - Sets the theme to use when plugin executes in a non-browser context
+ * Sets the theme to use when plugin executes in a non-browser context
+ * @param { ThemeOptions } v The default theme
  */
 export const setDefaultTheme = (v) => {
 	_defaultTheme.value = v;
 };
 
 /**
- * @constant
- * @type {Function} - Sets the motion preference to use when plugin executes in a non-browser context
+ * Sets the motion preference to use when plugin executes in a non-browser context
+ * @param { MotionOptions } v Default motion preference
  */
 export const setDefaultMotion = (v) => {
 	_defaultMotion.value = v;
@@ -88,8 +100,8 @@ export const updateState = (v = defaultBreakpoint.value) => {
 };
 
 /**
- * @constant
- * @type {Function} - Resets the MQ object to its initial values, using defaultBreakpoint and defaultOrientation
+ * Resets the MQ object to its initial values, using defaultBreakpoint and defaultOrientation
+ * @returns { void }
  */
 export const resetState = () => {
 	const keys = Object.keys(_mqState);
@@ -104,9 +116,9 @@ export const resetState = () => {
 };
 
 /**
- * @constant
- * @type {Function} - Update values for the MQ object's orientation properties
- * @param {string} v - The orientation value to set, either "portrait" or "landscape".
+ * Update values for the MQ object's orientation properties
+ * @param { OrientationOptions } v The orientation value to set
+ * @returns { void }
  */
 export const updateOrientationState = (v = defaultOrientation.value) => {
 	_mqState.orientation = v;
@@ -115,9 +127,9 @@ export const updateOrientationState = (v = defaultOrientation.value) => {
 };
 
 /**
- * @constant
- * @type {Function} - Update values for the MQ object's theme properties
- * @param {string} v - The theme value to set, either "dark" or "light".
+ * Update values for the MQ object's theme properties
+ * @param { ThemeOptions } v The theme value to set
+ * @returns { void }
  */
 export const updateThemeState = (v = defaultTheme.value || "light") => {
 	_mqState.theme = v;
@@ -126,9 +138,9 @@ export const updateThemeState = (v = defaultTheme.value || "light") => {
 };
 
 /**
- * @constant
- * @type {Function} - Update values for the MQ object's motion perferences
- * @param {string} v - The motion preference value to set, either "reduced" or "no-preference".
+ * Update values for the MQ object's motion preferences
+ * @param { MotionOptions } v The motion preference to set
+ * @returns { void }
  */
 export const updateMotionState = (
 	v = defaultMotion.value || "no-preference"

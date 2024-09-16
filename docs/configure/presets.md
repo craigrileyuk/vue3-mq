@@ -36,6 +36,23 @@ app.use(Vue3Mq, {
 | xl   | 1280          |
 | xxl  | 1536          |
 
+## Vuetify 3
+
+```js
+app.use(Vue3Mq, {
+	preset: "vuetify3",
+});
+```
+
+| Name | Minimum width |
+| ---- | ------------- |
+| xs   | 0             |
+| sm   | 600           |
+| md   | 960           |
+| lg   | 1280          |
+| xl   | 1920          |
+| xxl  | 2560          |
+
 ## Vuetify
 
 ```js

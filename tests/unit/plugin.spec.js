@@ -1,7 +1,11 @@
+// @vitest-environment jsdom
+
+import { describe, it, expect, vi, beforeEach } from "vitest";
+
 import plugin from "../../src/plugin.js";
 import MqResponsive from "../../src/component.js";
 import { mount } from "@vue/test-utils";
-import { h, inject } from "vue";
+import { h } from "vue";
 import MatchMediaMock from "../mock/MatchMediaMock";
 import * as store from "../../src/store.js";
 
@@ -12,7 +16,7 @@ describe("plugin.js", () => {
 		results = new Set();
 		matchMediaMock = MatchMediaMock.create();
 		matchMediaMock.setConfig({ type: "screen", width: 1200 });
-		window.matchMedia = jest.fn((...args) => {
+		window.matchMedia = vi.fn((...args) => {
 			const result = matchMediaMock(...args);
 			results.add(result);
 			return result;
@@ -32,7 +36,7 @@ describe("plugin.js", () => {
 		expect("mq" in wrapper.vm).toBe(true);
 	});
 
-	test("should default to defaultBreakpoint in options", () => {
+	it("should default to defaultBreakpoint in options", () => {
 		matchMediaMock.setConfig({});
 		const plugins = [
 			[
@@ -57,7 +61,7 @@ describe("plugin.js", () => {
 		expect(wrapper.vm.mq.current).toBe("md");
 	});
 
-	test("should mount with a preset and set the correct breakpoints", () => {
+	it("should mount with a preset and set the correct breakpoints", () => {
 		matchMediaMock.setConfig({});
 		const plugins = [
 			[
@@ -87,7 +91,7 @@ describe("plugin.js", () => {
 		expect(wrapper.vm.mq.current).toBe("desktop");
 	});
 
-	test("should subscribe to media queries", () => {
+	it("should subscribe to media queries", () => {
 		const wrapper = mount(
 			{
 				render() {
@@ -97,6 +101,7 @@ describe("plugin.js", () => {
 			},
 			{ global: { plugins: [plugin] }, shallow: true }
 		);
+		expect(typeof window).not.toBe("undefined");
 		expect(window.matchMedia).toBeCalledWith("(min-width: 1400px)");
 		expect(window.matchMedia).toBeCalledWith(
 			"(min-width: 1200px) and (max-width: 1399px)"
@@ -115,7 +120,7 @@ describe("plugin.js", () => {
 		);
 	});
 
-	test("should set $mq accordingly when media query change", () => {
+	it("should set $mq accordingly when media query change", () => {
 		const wrapper = mount(
 			{
 				render() {

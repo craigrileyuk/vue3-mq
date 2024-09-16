@@ -5,9 +5,7 @@
 
     released under MIT licence
 */
-import clone from "lodash/clone";
-import mapValues from "lodash/mapValues";
-import forOwn from "lodash/forOwn";
+import { clone, mapValues, forOwn } from "lodash-es";
 import MediaQueryListMock from "./MediaQueryListMock";
 
 export default {

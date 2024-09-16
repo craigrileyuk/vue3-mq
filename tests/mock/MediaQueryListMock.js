@@ -1,13 +1,12 @@
 /*
     https://github.com/azazdeaz/match-media-mock
 
-    written by András Polgár, 
+    written by András Polgár,
     modified by Craig Riley to include the preferred, newer addEventListener and removeEventListener methods
 
     released under MIT licence
 */
-import includes from "lodash/includes";
-import pull from "lodash/pull";
+import { includes, pull } from "lodash-es";
 import mediaQuery from "css-mediaquery";
 import ExecutionEnvironment from "exenv";
 

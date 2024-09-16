@@ -12,4 +12,7 @@ export default {
 			"vue3-mq": path.resolve(__dirname, "./src/index.js"),
 		},
 	},
+	test: {
+		include: ["tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
+	},
 };

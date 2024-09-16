@@ -1,11 +1,12 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import * as validation from "../../src/validation";
 import * as presets from "../../src/presets";
 
 describe("validation.js", () => {
 	let spy, warningSpy;
 	beforeEach(() => {
-		spy = jest.spyOn(global.console, "error").mockImplementation(() => {});
-		warningSpy = jest
+		spy = vi.spyOn(global.console, "error").mockImplementation(() => {});
+		warningSpy = vi
 			.spyOn(global.console, "warn")
 			.mockImplementation(() => {});
 	});

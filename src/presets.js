@@ -22,6 +22,15 @@ export const bootstrap3 = {
 	lg: 1200,
 };
 
+export const vuetify3 = {
+	xs: 0,
+	sm: 600,
+	md: 960,
+	lg: 1280,
+	xl: 1920,
+	xxl: 2560,
+};
+
 export const vuetify = {
 	xs: 0,
 	sm: 600,
