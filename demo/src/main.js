@@ -5,6 +5,8 @@ import App from "./App.vue";
 import "./main.css";
 
 const app = createApp(App);
-app.use(Vue3Mq);
+app.use(Vue3Mq, {
+	global: true,
+});
 
 app.mount("#app");

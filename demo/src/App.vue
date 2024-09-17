@@ -43,25 +43,20 @@
 </template>
 
 <script setup>
-import {
-	useMq,
-	MqResponsive,
-	availableBreakpoints,
-	updateBreakpoints,
-} from "vue3-mq";
+import { useMq, availableBreakpoints, updateBreakpoints } from "vue3-mq";
 
 const mq = useMq();
 
 const changeToCustomBreakpoints = () => {
 	updateBreakpoints({
 		breakpoints: {
-			hellaSmall: 0,
+			tiny: 0,
 			prettySmall: 600,
 			mediocre: 1020,
-			sizable: 1280,
+			sizeable: 1280,
 			big: 1600,
-			phat: 1920,
-			awHellNo: 2400,
+			chonky: 1920,
+			colossal: 2400,
 		},
 	});
 };

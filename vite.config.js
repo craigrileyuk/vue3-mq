@@ -2,14 +2,20 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 
 export default {
-	plugins: [
-		vue({
-			reactivityTransform: true,
-		}),
-	],
-	resolve: {
-		alias: {
-			"vue3-mq": path.resolve(__dirname, "./src/index.js"),
+	plugins: [vue()],
+	build: {
+		lib: {
+			entry: path.resolve(__dirname, "src/index.js"),
+			name: "Vue3Mq",
+			formats: ["es", "umd", "cjs", "iife"],
+		},
+		rollupOptions: {
+			external: ["vue"],
+			output: {
+				globals: {
+					vue: "Vue",
+				},
+			},
 		},
 	},
 	test: {

@@ -6,9 +6,8 @@ import {
 import { ref } from "vue";
 
 /**
- * Remove all MediaMatch listeners from the window object and empty the listeners array
- *
- * @type {Function} - Sets the orientation to use when plugin executes in a non-browser context
+ * Remove all MediaMatch listeners from the window object and empties the listeners array
+ * @return { void }
  */
 export function removeListeners() {
 	while (listeners.length > 0) {
@@ -26,9 +25,7 @@ export function removeListeners() {
 
 /**
  * Convert available breakpoints in to media query strings
- *
- * @type {Function} - Sets the orientation to use when plugin executes in a non-browser context
- * @returns {string[]} - An array of media query strings
+ * @returns {string[]} An array of media query strings
  */
 export function createMediaQueries() {
 	const mediaQueries = availableBreakpoints.value.reduce(
@@ -83,9 +80,9 @@ export function subscribeToMediaQuery(mediaQuery, callback) {
 }
 
 /**
- * @constant {Function} validateBreakpoint - Checks that the given breakpoint matches against the given breakpoints in config
- * @param {string} bp - The breakpoint to validate
- * @returns {boolean} - The validity of the breakpoint
+ * Checks that the given breakpoint matches against the given breakpoints in config
+ * @param {string} bp The breakpoint to validate
+ * @returns {boolean} The validity of the breakpoint
  */
 const validateBreakpoint = (bp) => {
 	return availableBreakpoints.value.some(
@@ -94,7 +91,7 @@ const validateBreakpoint = (bp) => {
 };
 
 /**
- * @constant {Function} calculateBreakpointsToRender - Checks that the given breakpoint matches against the available breakpoints in config
+ * Calculate which breakpoints are currently active
  * @param {string} bp - The breakpoint to validate
  * @param {ref} available - A Vue REF holding an array of objects denoting breakpoints registered with the plugin
  * @returns {string[]} - An array of breakpoint keys that should be rendered based on the current breakpoint
@@ -159,10 +156,10 @@ export const calculateBreakpointsToRender = (bp, available) => {
 };
 
 /**
- * @constant {Function} calculateOrientationsToRender - Creates an array of the orientations that should be rendered
- * @param {boolean} landscape - Render only in landscape mode
- * @param {boolean} portrait - Render only in portrait mode
- * @returns {string[]} - An array of orientations that should be rendered based on the current value
+ * Creates an array of the orientations that should be rendered
+ * @param {boolean} landscape Render only in landscape mode
+ * @param {boolean} portrait Render only in portrait mode
+ * @returns {string[]} An array of orientations that should be rendered based on the current value
  */
 export const calculateOrientationsToRender = (landscape, portrait) => {
 	const arr = [];
@@ -173,10 +170,10 @@ export const calculateOrientationsToRender = (landscape, portrait) => {
 };
 
 /**
- * @constant {Function} calculateThemesToRender - Creates an array of the themes that should be rendered on
- * @param {boolean} dark - Render only in dark mode
- * @param {boolean} light - Render only in light mode
- * @returns {string[]} - The array of themes to render on based upon the current value
+ * Creates an array of the themes that should be rendered on
+ * @param {boolean} dark Render only in dark mode
+ * @param {boolean} light Render only in light mode
+ * @returns {string[]} The array of themes to render on based upon the current value
  */
 export const calculateThemesToRender = (dark, light) => {
 	const arr = [];

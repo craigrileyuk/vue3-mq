@@ -65,5 +65,4 @@ const install = (
 
 export default {
 	install,
-	MqResponsive,
 };

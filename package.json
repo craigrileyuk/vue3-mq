@@ -35,10 +35,11 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite",
-		"build": "vitest --run && vite build -c vite-build.config.js",
+		"build": "vitest --run && vite build",
 		"docs:dev": "pnpm --filter ./docs run dev",
 		"docs:build": "pnpm --filter ./docs run build",
 		"docs:preview": "pnpm --filter ./docs run preview",
+		"demo": "pnpm --filter ./demo run dev",
 		"test": "vitest",
 		"build:types": "vue-tsc && cp ./src/global.d.ts ./types/global.d.ts && npm run copy-ref",
 		"copy-ref": "echo '/// <reference path=\"./global.d.ts\" />\n' | cat - ./types/index.d.ts > temp && mv temp ./types/index.d.ts",

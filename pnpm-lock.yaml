@@ -75,6 +75,12 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
 
+  demo:
+    dependencies:
+      vue3-mq:
+        specifier: link:..
+        version: link:..
+
   docs:
     devDependencies:
       fast-glob:
