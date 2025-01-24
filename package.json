@@ -1,6 +1,6 @@
 {
 	"name": "vue3-mq",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "Build responsive design into your Vue 3 app",
 	"files": [
 		"dist/*",
