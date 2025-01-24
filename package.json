@@ -9,14 +9,15 @@
 	"type": "module",
 	"main": "./dist/vue3-mq.cjs",
 	"module": "./dist/vue3-mq.js",
+	"types": "./types/index.d.ts",
 	"exports": {
 		".": {
+			"types": "./types/index.d.ts",
 			"import": "./dist/vue3-mq.js",
 			"umd": "./dist/vue3-mq.umd.cjs",
 			"require": "./dist/vue3-mq.cjs"
 		}
 	},
-	"types": "./types/index.d.ts",
 	"browserslist": [
 		"> 1%",
 		"last 2 versions",
