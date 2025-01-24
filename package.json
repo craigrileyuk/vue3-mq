@@ -7,12 +7,13 @@
 		"types/*"
 	],
 	"type": "module",
-	"main": "./dist/vue3-mq.umd.js",
+	"main": "./dist/vue3-mq.cjs",
 	"module": "./dist/vue3-mq.js",
 	"exports": {
 		".": {
 			"import": "./dist/vue3-mq.js",
-			"require": "./dist/vue3-mq.umd.js"
+			"umd": "./dist/vue3-mq.umd.cjs",
+			"require": "./dist/vue3-mq.cjs"
 		}
 	},
 	"types": "./types/index.d.ts",
@@ -50,27 +51,27 @@
 	},
 	"devDependencies": {
 		"@mdi/js": "^7.4.47",
-		"@vitejs/plugin-vue": "^5.1.3",
-		"@vue/compiler-sfc": "^3.5.6",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vue/compiler-sfc": "^3.5.13",
 		"@vue/test-utils": "^2.4.6",
 		"autoprefixer": "^10.4.20",
 		"css-mediaquery": "^0.1.2",
-		"eslint": "^9.10.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-jsdoc": "^50.2.3",
-		"eslint-plugin-vue": "^9.28.0",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-jsdoc": "^50.6.2",
+		"eslint-plugin-vue": "^9.32.0",
 		"exenv": "^1.2.2",
 		"lodash-es": "^4.17.21",
 		"match-media-mock": "^0.1.1",
-		"postcss": "^8.4.47",
-		"sass": "^1.78.0",
-		"tailwindcss": "^3.4.11",
-		"typescript": "^5.6.2",
-		"vite": "^5.4.5",
-		"vitest": "^2.1.1",
-		"vue": "^3.5.6",
-		"vue-tsc": "^2.1.6",
-		"vue3-icon": "^2.1.0"
+		"postcss": "^8.5.1",
+		"sass": "^1.83.4",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.7.3",
+		"vite": "^6.0.11",
+		"vitest": "^3.0.4",
+		"vue": "^3.5.13",
+		"vue-tsc": "^2.2.0",
+		"vue3-icon": "^3.0.3"
 	},
 	"bugs": {
 		"url": "https://github.com/craigrileyuk/vue3-mq/issues"
