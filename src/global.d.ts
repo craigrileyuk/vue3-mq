@@ -4,3 +4,5 @@ declare module "vue" {
 		$mq: reactive;
 	}
 }
+
+export {};
