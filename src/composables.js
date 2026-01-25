@@ -31,9 +31,14 @@ import {
  * @public
  * @param {object} config - Configuration object for updating breakpoints
  * @param {object} config.breakpoints - An object of name:min values to set
+ * @param {object} config.mergeBreakpoints - A mergeable object of name:min values to set
  * @param {object} config.preset - A breakpoint preset to use
  */
-export function updateBreakpoints({ breakpoints, preset }) {
+export function updateBreakpoints({
+	breakpoints,
+	mergeBreakpoints = {},
+	preset,
+}) {
 	const validatedPreset = preset ? validatePreset(preset) : false;
 	const sanitisedBreakpoints = breakpoints
 		? sanitiseBreakpoints(breakpoints)
@@ -41,13 +46,16 @@ export function updateBreakpoints({ breakpoints, preset }) {
 
 	if (validatedPreset === false && !sanitisedBreakpoints) {
 		throw new TypeError(
-			"Vue3 Mq: You must provide a valid preset, or valid breakpoint settings."
+			"Vue3 Mq: You must provide a valid preset, or valid breakpoint settings.",
 		);
 	} else {
 		setAvailableBreakpoints(
 			sanitisedBreakpoints
 				? sanitisedBreakpoints
-				: sanitiseBreakpoints(validatedPreset)
+				: sanitiseBreakpoints({
+						...validatedPreset,
+						...mergeBreakpoints,
+					}),
 		);
 	}
 
@@ -102,7 +110,7 @@ export function useMq() {
 	const mq = inject("mq");
 	if (!mq) {
 		throw new Error(
-			"Vue3Mq is not installed in this app. Please follow the installation instructions and try again."
+			"Vue3Mq is not installed in this app. Please follow the installation instructions and try again.",
 		);
 	} else return mq;
 }

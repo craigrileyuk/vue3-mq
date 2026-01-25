@@ -22,6 +22,15 @@ export const bootstrap3 = {
 	lg: 1200,
 };
 
+export const vuetify4 = {
+	xs: 0,
+	sm: 600,
+	md: 840,
+	lg: 1145,
+	xl: 1545,
+	xxl: 2138,
+};
+
 export const vuetify3 = {
 	xs: 0,
 	sm: 600,
@@ -63,4 +72,20 @@ export const wordpress = {
 	xlarge: 1080,
 	wide: 1280,
 	huge: 1440,
+};
+
+export const mui = {
+	xs: 0,
+	sm: 600,
+	md: 900,
+	lg: 1200,
+	xl: 1536,
+};
+
+export const bulma = {
+	mobile: 0,
+	tablet: 768,
+	desktop: 1024,
+	widescreen: 1216,
+	fullhd: 1408,
 };

@@ -52,26 +52,22 @@
 	},
 	"devDependencies": {
 		"@mdi/js": "^7.4.47",
-		"@vitejs/plugin-vue": "^5.2.1",
-		"@vue/compiler-sfc": "^3.5.13",
+		"@vitejs/plugin-vue": "^6.0.3",
 		"@vue/test-utils": "^2.4.6",
-		"autoprefixer": "^10.4.20",
 		"css-mediaquery": "^0.1.2",
-		"eslint": "^9.18.0",
-		"eslint-config-prettier": "^10.0.1",
-		"eslint-plugin-jsdoc": "^50.6.2",
-		"eslint-plugin-vue": "^9.32.0",
+		"eslint": "^9.39.2",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-jsdoc": "^62.0.0",
+		"eslint-plugin-vue": "^10.7.0",
 		"exenv": "^1.2.2",
-		"lodash-es": "^4.17.21",
+		"lodash-es": "^4.17.23",
 		"match-media-mock": "^0.1.1",
-		"postcss": "^8.5.1",
-		"sass": "^1.83.4",
-		"tailwindcss": "^3.4.17",
-		"typescript": "^5.7.3",
-		"vite": "^6.0.11",
-		"vitest": "^3.0.4",
-		"vue": "^3.5.13",
-		"vue-tsc": "^2.2.0",
+		"typescript": "^5.9.3",
+		"vite": "npm:rolldown-vite@^7.3.1",
+		"vitest": "^4.0.0",
+		"vue": "^3.5.27",
+		"vue-eslint-parser": "^10.2.0",
+		"vue-tsc": "^3.2.3",
 		"vue3-icon": "^3.0.3"
 	},
 	"bugs": {
@@ -92,5 +88,5 @@
 		"breakpoints",
 		"vue-mq"
 	],
-	"packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+	"packageManager": "pnpm@10.28.1+sha512.7d7dbbca9e99447b7c3bf7a73286afaaf6be99251eb9498baefa7d406892f67b879adb3a1d7e687fc4ccc1a388c7175fbaae567a26ab44d1067b54fcb0d6a316"
 }

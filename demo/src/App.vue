@@ -1,9 +1,11 @@
 <template>
 	<div class="min-h-screen flex flex-col">
 		<header class="bg-slate-500 text-white shadow-md p-2">
-			<h1 class="text-2xl">Vue3-MQ Sandbox</h1>
+			<div class="container">
+				<h1 class="text-2xl">Vue3-MQ Sandbox</h1>
+			</div>
 		</header>
-		<main class="flex-grow container mx-auto py-4">
+		<main class="grow container mx-auto py-4">
 			<pre>{{ mq }}</pre>
 			<MqResponsive>No props</MqResponsive>
 			<MqResponsive inert>Reduced motion is preferred</MqResponsive>

@@ -20,6 +20,7 @@ import {
  * @param {object} config - Plugin installation configuration object
  * @param {string} config.preset - A string representing an exported preset from ./presets.js
  * @param {object} config.breakpoints - User defined breakpoints comprising a named key with a minimum width value
+ * @param {object} config.mergeBreakpoints - User defined breakpoints comprising a named key with a minimum width value
  * @param {string} config.defaultBreakpoint - The screen size to set when the plugin is executed in a non-browser context (e.g. SSR)
  * @param {string} config.defaultOrientation - The screen orientation to set when the plugin is executed in a non-browser context (e.g. SSR)
  * @param {string} config.defaultMotion - The motion preference to set when the plugin is executed in a non-browser context (e.g. SSR)
@@ -31,12 +32,13 @@ const install = (
 	{
 		preset = "bootstrap5",
 		breakpoints,
+		mergeBreakpoints,
 		defaultBreakpoint,
 		defaultOrientation = "landscape",
 		defaultMotion = "no-preference",
 		defaultTheme,
 		global = false,
-	} = {}
+	} = {},
 ) => {
 	try {
 		const validatedDefaultOrientation =
@@ -57,7 +59,7 @@ const install = (
 			app.config.globalProperties.$mq = mqState;
 		}
 
-		updateBreakpoints({ breakpoints, preset });
+		updateBreakpoints({ breakpoints, mergeBreakpoints, preset });
 	} catch (e) {
 		console.error(e);
 	}

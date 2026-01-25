@@ -1,0 +1,15 @@
+{
+	"version": "0.2",
+	"language": "en_GB",
+	"ignorePaths": [],
+	"dictionaryDefinitions": [],
+	"dictionaries": [],
+	"words": [
+		"vuetify"
+	],
+	"ignoreWords": [
+		"fullhd",
+		"xlarge"
+	],
+	"import": []
+}
