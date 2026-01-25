@@ -29,11 +29,16 @@ Check out the documentation at [Vue3 MQ: Github Pages](https://craigrileyuk.gith
 
 [MIT](https://github.com/craigrileyuk/vue3-mq/blob/main/LICENSE)
 
-## Sponsor / Donate
+## Support Open-Source Software
 
-Finding this package useful? Then help keep the coffee flowing.
+We're providing this package free-of-charge to the community. However, all development and maintenance costs time, energy and money. So please help fund this project if you can.
 
-[Sponsor Craig Riley on Github](https://github.com/sponsors/craigrileyuk/)
+<p align="center" style="display:flex;align-items:center;gap:1rem;justify-content:center">
+<a href="https://github.com/sponsors/craigrileyuk" target="_blank">
+<img src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-fafbfc?style=for-the-badge&logo=github">
+</a>
+<a href="https://www.buymeacoffee.com/craigrileyuk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</p>
 
 ## Other Packages by the Author
 
